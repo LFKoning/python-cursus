@@ -34,23 +34,20 @@ with column_active:
     # Header: Active Tasks.
     st.header("Active Tasks")
 
-    # For loop for tasks in TASK_LIST.
-    for task in TASK_LIST:
+    # TODO: For loop for tasks in TASK_LIST.
 
-        # Filter active tasks only.
-        if task["status"] == "Active":
+        # TODO: Filter active tasks only.
 
-            # Add a container with border for a task.
+            # Container with border for a task.
             with st.container(border=True):
 
-                # Two columns with a 10 : 1 ratio.
-                task_left, task_right = st.columns((10, 1))
+                # Two columns with a 5 : 1 ratio.
+                task_left, task_right = st.columns((5, 1))
 
                 # Left column:
                 with task_left:
 
-                    # Subheader: task description.
-                    st.subheader(task["description"])
+                    # TODO: Subheader for the task description.
 
                 # Right column:
                 with task_right:
@@ -65,26 +62,8 @@ with column_completed:
     # Header: Completed Tasks
     st.header("Completed Tasks")
 
-    # For loop for tasks in TASK_LIST.
-    for task in TASK_LIST:
+    # TODO: Copy the for-loop from the center column.
+    
+    # TODO: Change the filter to display completed tasks.
 
-        # Filter completed tasks only.
-        if task["status"] == "Completed":
-
-            # Add a container with border for a task.
-            with st.container(border=True):
-
-                # Two columns with a 10 : 1 ratio.
-                task_left, task_right = st.columns((10, 1))
-
-                # Left column:
-                with task_left:
-
-                    # Subheader: task description.
-                    st.subheader(task["description"])
-
-                # Right column:
-                with task_right:
-
-                    # Subheader: X
-                    st.subheader("X")
+    # TODO: Change the subheader >> into X.

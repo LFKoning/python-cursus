@@ -28,11 +28,9 @@ def load_tasks():
 
 def add_task(task_description, task_priority):
     """Add a new task with provided description and priority."""
-    requests.get(
-        f"{API_URL}/add",
-        params={"description": task_description, "priority": task_priority},
-        timeout=5,
-    )
+
+    # TODO: Call the /add endpoint of your API.
+    # Provide task_description and task_priority as parameters.
 
     # Reload the page to show the added task.
     st.rerun()
@@ -40,20 +38,18 @@ def add_task(task_description, task_priority):
 
 def complete_task(task_id):
     """Complete task with the provided task_id."""
-    requests.get(
-        f"{API_URL}/update",
-        params={"task_id": task_id, "status": "Completed"},
-        timeout=5,
-    )
+
+    # TODO: Call the /update endpoint of your API.
+    # Provide task_id and status as parameters.
+    # Use "Completed" for the status parameter.
 
 
 def delete_task(task_id):
     """Delete task with the provided task_id."""
-    requests.get(
-        f"{API_URL}/delete",
-        params={"task_id": task_id},
-        timeout=5,
-    )
+
+    # TODO: Call the /delete endpoint of your API.
+    # Provide task_id as a parameter.
+
 
 # Holds the list of tasks, active and complete.
 TASK_LIST = load_tasks()
@@ -116,8 +112,8 @@ with column_active:
             # Container with border for a task.
             with st.container(border=True):
 
-                # Two columns with a 10 : 1 ratio.
-                task_left, task_right = st.columns((10, 1))
+                # Two columns with a 5 : 1 ratio.
+                task_left, task_right = st.columns((5, 1))
 
                 # Left column:
                 with task_left:
@@ -152,8 +148,8 @@ with column_completed:
             # Container with border for a task.
             with st.container(border=True):
 
-                # Two columns with a 10 : 1 ratio.
-                task_left, task_right = st.columns((10, 1))
+                # Two columns with a 5 : 1 ratio.
+                task_left, task_right = st.columns((5, 1))
 
                 # Left column:
                 with task_left:

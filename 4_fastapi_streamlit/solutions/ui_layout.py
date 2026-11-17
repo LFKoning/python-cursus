@@ -11,7 +11,7 @@ st.title("\N{memo} TO DO List")
 # Divider line.
 st.divider()
 
-# Create 3 column layout.
+# Create a 3 column layout.
 column_add, column_active, column_completed = st.columns(3, gap="large")
 
 # Left column:
@@ -29,8 +29,8 @@ with column_active:
     # Add a container with border for a task.
     with st.container(border=True):
 
-        # Create 2 columns with ratio 10 : 1.
-        task_left, task_right = st.columns((10, 1))
+        # Create 2 columns with ratio 5 : 1.
+        task_left, task_right = st.columns((5, 1))
 
         # Left column:
         with task_left:

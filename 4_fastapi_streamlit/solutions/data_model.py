@@ -1,21 +1,21 @@
 """Pydantic data model for to do application."""
 
 from uuid import uuid4
-import datetime as dt
 from typing import Literal
 
 from pydantic import BaseModel, Field
 
+# Define type for statuses: "Active", or "Completed".
 ToDoStatus = Literal["Active", "Completed"]
 
+# Define type for valid priorities: "High", "Medium", or "Low".
 ToDoPriority = Literal["High", "Medium", "Low"]
 
 
 class ToDoTask(BaseModel):
-    """Basemodel for tasks."""
+    """Basemodel for To Do tasks."""
 
     task_id: str = Field(default_factory=lambda: str(uuid4()))
     description: str
     priority: ToDoPriority = "Medium"
     status: ToDoStatus = "Active"
-    created_date: str = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
